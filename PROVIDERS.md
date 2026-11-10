@@ -10,7 +10,7 @@ telecoms, payroll systems, and retailers real people actually use.
   [provider request](https://github.com/rheeloaded/paperpull/issues/new/choose)
   so someone with that account can pick it up.
 
-## Supported (81, plus five built and waiting for a tester)
+## Supported (81, plus seven built and waiting for a tester)
 
 | App | Provider | Documents | Category |
 |-----|----------|-----------|----------|
@@ -43,6 +43,7 @@ telecoms, payroll systems, and retailers real people actually use.
 | [`dominion`](apps/dominion) | Dominion Energy (VA) | Billing statements | Utility |
 | [`ebay`](apps/ebay) | eBay | Order receipts, the order-details page rendered to PDF, ten years of purchase history, nothing clicked. Confirmed by @jpfieber on issue #44, every order back to 2017 | Retail |
 | [`etrade`](apps/etrade) | E*TRADE | Statements, trade confirmations, tax forms. Confirmed by @watling777, whose Pilot and full run saved every statement (#36). No tax form seen yet, his account has none | Brokerage |
+| [`eversource`](apps/eversource) | Eversource (Massachusetts i-doxs) | Electric and gas bill PDFs across listed accounts, bounded date windows and numeric pages; up to 36 months online. Built from observed portal behavior with synthetic tests; PaperPull/CDP pilot pending | Utility |
 | [`ezpassva`](apps/ezpassva) | E-ZPass Virginia | Monthly and quarterly statements, the roughly one year of each the portal keeps online, so run it at least once a year. Built on the maintainer's own account | Tolls |
 | [`fairfaxwater`](apps/fairfaxwater) | Fairfax Water (VA) | Water bills, the last year's, from the FW Customer portal | Utility |
 | [`fedex`](apps/fedex) | FedEx (Billing Online) | Shipping invoices. UNTESTED, built from a login not connected to Billing Online, no invoice seen. Use it? Run Diagnose and attach the file to issue #54 | Shipping |
@@ -63,6 +64,7 @@ telecoms, payroll systems, and retailers real people actually use.
 | [`mtb`](apps/mtb) | M&T Bank | Mortgage statements, escrow, 1098 | Mortgage servicing |
 | [`netbenefits`](apps/netbenefits) | Fidelity NetBenefits | Quarterly or monthly 401(k) statements for every plan on the sign-in, made to order and rendered, nothing clicked | Workplace retirement plan |
 | [`navyfederal`](apps/navyfederal) | Navy Federal CU | Account statements | Bank / credit union |
+| [`nationalgrid`](apps/nationalgrid) | National Grid (Massachusetts residential gas only) | Current and previous bill PDFs for the selected account, up to two years online. Original signed-in tab must remain open. Built from observed portal behavior with synthetic tests; PaperPull/CDP pilot pending | Utility |
 | [`nelnet`](apps/nelnet) | Nelnet | Student loan billing statements and the 1098-E, from a federal student loan servicer. Contributed by @tylerverry. A full run saved all 47 documents, 41 statements back to 2019, the 1098-E and 5 notices, every one a valid PDF | Student loan servicer |
 | [`newrez`](apps/newrez) | Newrez | Mortgage statements, escrow analysis, 1098. Confirmed by @watling777, whose run saved every document, three years of statements through the statements page's year picker and the 1098s (#38) | Mortgage servicer |
 | [`optum`](apps/optum) | Optum Bank (HSA) | Monthly HSA statements and tax forms, the 5498-SA and, in a year with distributions, the 1099-SA, each a plain link on the member site fetched by its own address, nothing clicked. Contributed by @JasperDale420, whose full run saved 21 statements and the 5498-SA. One HSA so far, so more than one product is untested | HSA custodian |

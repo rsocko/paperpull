@@ -116,6 +116,15 @@ The `.gitignore` already blocks all of the following. Do not override it.
     app has the allowlist and a working guard, that a guard an app defines
     is asked on a path its run takes, that an app said here to click nothing
     presses nothing in its run, and that no broad click is left unguarded.
+    Eversource and National Grid additionally scope utility actions to their
+    bill-history controls. Eversource uses only labeled history filters,
+    Apply Dates, numeric pagination and each bill row's own VIEW; it never
+    replays WebForms submissions. National Grid presses only each listed
+    bill's own View button and reads the observed same-origin viewer's actual
+    PDF blob in the original signed-in tab. Both refuse payment, autopay,
+    enrollment, budget billing, scheduled-payment edits/cancellations,
+    settings and meter-reading submissions. Their live PaperPull pilots are
+    still pending.
     When an app asks for a document through Playwright's own client, which
     carries the browser's cookies, each redirect is checked with the same
     guard before it is followed, one step at a time,

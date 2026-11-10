@@ -1,0 +1,7 @@
+{
+  "_comment": "Only Massachusetts residential gas bill PDFs are collected.",
+  "tax_rules": [],
+  "insurance_rules": [],
+  "statement_rules": [{"pattern": "\\bbill\\b", "summary": "Bill"}],
+  "skip_patterns": []
+}
