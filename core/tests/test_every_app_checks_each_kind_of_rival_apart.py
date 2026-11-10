@@ -345,11 +345,22 @@ def coinbase_pools():
     return out
 
 
+def eversource_pools():
+    site = load(APPS / "eversource", "eversource_site")
+    rows = [
+        site.RawDoc("Gas Bill", day, account, "synthetic-%d" % i, total=amount)
+        for i, (day, account, amount) in enumerate([
+            (DAY, "700001", "12.34"), (DAY, "700001", "56.78"),
+            (BEFORE, "700001", "12.34"), (AFTER, "700001", "56.78"),
+            (DAY, "700002", "12.34"), (BEFORE, "700002", "56.78")])]
+    return [(site.identity_for(row), site.rival_pools(row, rows)) for row in rows]
+
+
 # How each app of more than one fact builds the pools it hands to its checks,
 # by its own code. Each answers (identity, the pools it checks apart) for
 # every row of a list where the two kinds meet.
 POOLS = {"bofa": bofa_pools, "navyfederal": navyfederal_pools, "costco": costco_pools,
-         "paypal": paypal_pools, "coinbase": coinbase_pools}
+         "paypal": paypal_pools, "coinbase": coinbase_pools, "eversource": eversource_pools}
 
 MANY = [d for d in CHECKERS if not one_fact(d)]
 
